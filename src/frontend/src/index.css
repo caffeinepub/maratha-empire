@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* Maratha Empire - Dark Cinematic Theme */
+    --background: 0.09 0.005 15;
+    --foreground: 0.91 0.01 80;
+    --card: 0.11 0.005 15;
+    --card-foreground: 0.91 0.01 80;
+    --popover: 0.13 0.005 15;
+    --popover-foreground: 0.91 0.01 80;
+
+    /* Gold as primary */
+    --primary: 0.74 0.12 75;
+    --primary-foreground: 0.09 0.005 15;
+
+    --secondary: 0.17 0.07 15;
+    --secondary-foreground: 0.91 0.01 80;
+
+    --muted: 0.16 0.01 15;
+    --muted-foreground: 0.62 0.08 75;
+
+    --accent: 0.76 0.13 75;
+    --accent-foreground: 0.09 0.005 15;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.74 0.12 75;
+    --input: 0.22 0.02 15;
+    --ring: 0.74 0.12 75;
+
+    --chart-1: 0.74 0.12 75;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    --sidebar: 0.11 0.005 15;
+    --sidebar-foreground: 0.91 0.01 80;
+    --sidebar-primary: 0.74 0.12 75;
+    --sidebar-primary-foreground: 0.09 0.005 15;
+    --sidebar-accent: 0.17 0.07 15;
+    --sidebar-accent-foreground: 0.91 0.01 80;
+    --sidebar-border: 0.74 0.12 75;
+    --sidebar-ring: 0.74 0.12 75;
+
+    /* Custom Maratha tokens */
+    --gold: oklch(0.74 0.12 75);
+    --gold-bright: oklch(0.76 0.13 75);
+    --gold-muted: oklch(0.62 0.08 75);
+    --maroon: oklch(0.17 0.07 15);
+    --charcoal: oklch(0.11 0.005 15);
+    --near-black: oklch(0.07 0 0);
+    --off-white: oklch(0.91 0.01 80);
+  }
+
+  .dark {
+    --background: 0.09 0.005 15;
+    --foreground: 0.91 0.01 80;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background-color: oklch(0.09 0.005 15);
+    color: oklch(0.91 0.01 80);
+    font-family: "EB Garamond", Georgia, serif;
+  }
+}
+
+@layer utilities {
+  .font-cinzel {
+    font-family: "Cinzel", "Times New Roman", serif;
+  }
+
+  .font-cinzel-decorative {
+    font-family: "Cinzel Decorative", "Times New Roman", serif;
+  }
+
+  .font-garamond {
+    font-family: "EB Garamond", Georgia, serif;
+  }
+
+  .text-gold {
+    color: var(--gold);
+  }
+
+  .text-gold-bright {
+    color: var(--gold-bright);
+  }
+
+  .text-gold-muted {
+    color: var(--gold-muted);
+  }
+
+  .bg-maroon {
+    background-color: var(--maroon);
+  }
+
+  .border-gold {
+    border-color: var(--gold);
+  }
+
+  .border-gold-muted {
+    border-color: var(--gold-muted);
+  }
+
+  /* Ornate gold border effect */
+  .ornate-border {
+    border: 1px solid var(--gold);
+    box-shadow: 0 0 0 1px oklch(0.09 0.005 15), 0 0 0 3px
+      oklch(0.5 0.09 75 / 0.4), inset 0 0 0 1px oklch(0.5 0.09 75 / 0.2);
+  }
+
+  .gold-glow {
+    box-shadow: 0 0 20px oklch(0.74 0.12 75 / 0.3), 0 0 60px
+      oklch(0.74 0.12 75 / 0.1);
+  }
+
+  .header-gradient {
+    background: linear-gradient(
+      to right,
+      oklch(0.14 0.06 15),
+      oklch(0.09 0.005 15),
+      oklch(0.14 0.06 15)
+    );
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      oklch(0.07 0 0 / 0.5) 0%,
+      oklch(0.07 0 0 / 0.2) 30%,
+      oklch(0.07 0 0 / 0.4) 60%,
+      oklch(0.07 0 0 / 0.85) 100%
+    );
+  }
+
+  .card-overlay {
+    background: linear-gradient(
+      to bottom,
+      oklch(0.07 0 0 / 0.3) 0%,
+      oklch(0.07 0 0 / 0.85) 100%
+    );
+  }
+
+  .modal-bg {
+    background: linear-gradient(
+      to bottom,
+      oklch(0.09 0.005 15 / 0.97),
+      oklch(0.11 0.005 15 / 0.99)
+    );
+  }
+
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--gold),
+      var(--gold-bright),
+      var(--gold),
+      transparent
+    );
+  }
+
+  .corner-flourish::before,
+  .corner-flourish::after {
+    content: "✦";
+    position: absolute;
+    color: var(--gold);
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+
+  .corner-flourish::before {
+    top: 8px;
+    left: 12px;
+  }
+
+  .corner-flourish::after {
+    top: 8px;
+    right: 12px;
+  }
+
+  /* Hide scrollbar but keep scrollable */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(0.74 0.12 75 / 0.4) oklch(0.11 0.005 15);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: oklch(0.11 0.005 15);
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: oklch(0.74 0.12 75 / 0.4);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.74 0.12 75 / 0.7);
+  }
+}
+
+/* Floating window animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes backdropIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalFadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
+}
+
+.modal-enter {
+  animation: modalFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-exit {
+  animation: modalFadeOut 0.25s ease-in forwards;
+}
+
+.backdrop-enter {
+  animation: backdropIn 0.3s ease forwards;
+}
+
+/* Cinematic text shadow for hero */
+.cinematic-text {
+  text-shadow: 0 2px 4px oklch(0 0 0 / 0.8), 0 4px 20px oklch(0 0 0 / 0.5), 0 0
+    60px oklch(0.74 0.12 75 / 0.15);
+}
+
+/* Decorative ornament line */
+.ornament-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--gold);
+}
+
+.ornament-line::before,
+.ornament-line::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold));
+}
+
+.ornament-line::after {
+  background: linear-gradient(to left, transparent, var(--gold));
+}
+
+/* Quote styling */
+.historical-quote {
+  position: relative;
+  font-style: italic;
+  color: var(--gold);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  padding: 1.25rem 2rem;
+  border-left: 3px solid var(--gold);
+  background: oklch(0.74 0.12 75 / 0.05);
+  border-radius: 0 4px 4px 0;
+}
+
+.historical-quote::before {
+  content: "\201C";
+  position: absolute;
+  top: -0.5rem;
+  left: 0.5rem;
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.3;
+  font-family: "Cinzel", serif;
+  line-height: 1;
+}
